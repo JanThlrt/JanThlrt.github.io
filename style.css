@@ -46,16 +46,17 @@ header img {
   inset: 0;
   z-index: -2;
   overflow: hidden;
-  background: #000; /* Desktop-Fallback: schwarz */
+  background: #000;
 }
 
-/* Mobile-Video */
+/* Allgemeines Video-Styling */
 .bg-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.1)
 }
 
 /* Overlay dunkelt alles ab */
@@ -65,12 +66,22 @@ header img {
   background: rgba(0, 0, 0, 0.65);
 }
 
-/* Desktop: Video ausblenden -> nur schwarzer Hintergrund */
+/* Standard: Mobile */
+.desktop-video {
+  display: none;
+}
+
+/* Desktop */
 @media (min-width: 900px) {
-  .bg-video--mobile {
+  .mobile-video {
     display: none;
   }
+
+  .desktop-video {
+    display: block;
+  }
 }
+
 
 .profile-picture {
   width: 120px;
